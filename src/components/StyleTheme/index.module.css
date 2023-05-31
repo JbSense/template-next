@@ -1,0 +1,29 @@
+.Style-theme {
+  width: 25px;
+  height: 25px;
+  border-radius: 100%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  right: 32px;
+  bottom: 32px;
+  transition: .3s ease-in-out;
+}
+
+.Style-theme.theme-dark {
+  background-color: var(--c-white);
+}
+
+.Style-theme.theme-light {
+  background-color: var(--c-darkest);
+}
+
+.Style-theme > svg {
+  transition: .3s ease-in-out;
+}
+
+.Style-theme.theme-light > svg {
+  transform: rotate(180deg);
+}

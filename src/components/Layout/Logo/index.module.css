@@ -1,0 +1,23 @@
+.Logo {
+  position: absolute;
+  top: var(--m-sides);
+  left: var(--m-sides);
+  padding: 12px;
+}
+
+.Logo__name {
+  font-size: var(--text-base);
+  font-weight: 700;
+}
+
+.theme-dark .Logo__name {
+  color: var(--c-white);
+}
+
+.theme-light .Logo__name {
+  color: var(--c-black);
+}
+
+.Logo__name > span {
+  color: var(--c-ocean);
+}

@@ -2,13 +2,8 @@ import Image from 'next/image';
 import styles from './page.module.css';
 
 export default function Home() {
-  const obj = {
-    as: '',
-    ass: ''
-  };
-
   return (
-    <main className={styles.main}>
+    <main className={styles.Home}>
       <div className={styles.description}>
         <p>
           Get started by editing&nbsp;
