@@ -3,8 +3,10 @@ generator client {
 }
 
 datasource db {
-  provider = "mysql"
-  url      = env("DATABASE_URL")
+  provider     = "mysql"
+  url          = env("DATABASE_URL")
+  relationMode = "prisma"
+  shadowDatabaseUrl = env("SHADOW_DATABASE_URL")
 }
 
 model School {
@@ -16,23 +18,97 @@ model School {
   street    String
   number    String
   Employee  Employee[]
+  Stage     Stage[]
   createdAt DateTime   @default(now())
   updated   DateTime   @updatedAt
 
   @@map("schools")
 }
 
+model Stage {
+  id           String      @id @default(uuid())
+  nomenclature String
+  room         String?
+  schoolId     String
+  school       School      @relation(fields: [schoolId], references: [id])
+  Teacher      Teacher[]
+  Student      Student[]
+  createdAt    DateTime    @default(now())
+  updated      DateTime    @updatedAt
+  Frequency    Frequency[]
+
+  @@index([schoolId])
+  @@map("stages")
+}
+
 model Employee {
-  id        String   @id @default(uuid())
+  id        String    @id @default(uuid())
   name      String
   position  String
   schoolId  String
-  school    School   @relation(fields: [schoolId], references: [id])
+  school    School    @relation(fields: [schoolId], references: [id])
   User      User?
-  createdAt DateTime @default(now())
-  updated   DateTime @updatedAt
+  Teacher   Teacher[]
+  createdAt DateTime  @default(now())
+  updated   DateTime  @updatedAt
 
+  @@index([schoolId])
   @@map("employees")
+}
+
+model Teacher {
+  id         String   @id @default(uuid())
+  employeeId String   @unique
+  employee   Employee @relation(fields: [employeeId], references: [id])
+  stageId    String
+  stage      Stage    @relation(fields: [stageId], references: [id])
+  createdAt  DateTime @default(now())
+  updated    DateTime @default(now()) @updatedAt
+
+  @@index([stageId])
+  @@map("teachers")
+}
+
+model Student {
+  id               String      @id @default(uuid())
+  name             String
+  birthdate        String
+  birthCertificate String      @unique
+  cpf              String      @unique
+  rg               String      @unique
+  nis              String?     @unique
+  mother           String
+  father           String
+  district         String
+  street           String
+  number           String
+  period           String
+  observations     String?     @db.Text
+  stageId          String
+  stage            Stage       @relation(fields: [stageId], references: [id])
+  Frequency        Frequency[]
+  createdAt        DateTime    @default(now())
+  updated          DateTime    @default(now()) @updatedAt
+
+  @@index([stageId])
+  @@map("students")
+}
+
+model Frequency {
+  id            String   @id @default(uuid())
+  date          String
+  frequency     Boolean
+  justification String?  @db.Text
+  studentId     String
+  student       Student  @relation(fields: [studentId], references: [id])
+  stageId       String
+  stage         Stage    @relation(fields: [stageId], references: [id])
+  createdAt     DateTime @default(now())
+  updated       DateTime @default(now()) @updatedAt
+
+  @@index([studentId])
+  @@index([stageId])
+  @@map("frequencies")
 }
 
 model User {
@@ -41,7 +117,7 @@ model User {
   password   String
   level      String
   employeeId String   @unique
-  employee   Employee @relation(fields: employeeId, references: id)
+  employee   Employee @relation(fields: [employeeId], references: [id])
   createdAt  DateTime @default(now())
   updated    DateTime @updatedAt
 

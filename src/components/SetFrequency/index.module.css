@@ -1,0 +1,31 @@
+.Set-frequency {
+  display: flex;
+  gap: 12px;
+}
+
+.Set-frequency__true,
+.Set-frequency__false,
+.Set-frequency__justification {
+  font-size: var(--text-s);
+  font-weight: 500;
+  color: var(--c-white);
+  padding: 6px 16px;
+  border: 2px solid var(--c-dark);
+  border-radius: var(--br-btn);
+  cursor: pointer;
+}
+
+.Set-frequency__true.true {
+  background-color: var(--c-green);
+  border: 2px solid var(--c-green);
+}
+
+.Set-frequency__false.false {
+  background-color: var(--c-evil);
+  border: 2px solid var(--c-evil);
+}
+
+.Set-frequency__justification.exist {
+  background-color: var(--c-gold);
+  border: 2px solid var(--c-gold);
+}

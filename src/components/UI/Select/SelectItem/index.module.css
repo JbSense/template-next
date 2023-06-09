@@ -1,0 +1,10 @@
+.Select-item {
+  cursor: pointer;
+  font-size: var(--text-s);
+  color: var(--c-dark-medium);
+  transition: .3s ease;
+}
+
+.Select-item:hover {
+  color: var(--c-white);
+}

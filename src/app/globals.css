@@ -1,21 +1,30 @@
 :root {
   --max-width: 1100px;
   --medium-width: 500px;
+  --min-width: 300px;
   --m-sides: 32px;
 
-  --br-x: 12px;
+  --br-s: 12px;
+  --br-m: 18px;
+  --br-btn: 980px;
 
   --c-darkest: #0A0A0A;
   --c-dark: #1F1F1F;
-  --c-black: #000;
+  --c-dark-medium: #ACACAC;
+  --c-black: #020202;
+  --c-gray-medium: #E8E8E8;
   --c-gray: #F5F5F5;
   --c-apple-gray: #F2F2F7;
   --c-white: #fff;
   --c-ocean: #0071E3;
+  --c-green: #62A543;
+  --c-evil: #E44444;
+  --c-gold: #D99E32;
 
   --text-xs: 12px;
   --text-s: 14px;
   --text-base: 16px;
+  --text-m: 18px;
   --text-l: 24px;
   --text-xl: 36px;
   --text-xxl: 48px;
@@ -44,11 +53,11 @@ button {
   background: transparent;
   border: none;
   cursor: pointer;
-  width: 100%;
-  height: 50px;
   font-size: var(--text-s);
   font-weight: 500;
-  border-radius: var(--br-x);
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 input {
@@ -58,17 +67,37 @@ input {
   font-size: var(--text-base);
 }
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+textarea {
+  outline: none;
+  resize: none;
+  border: none;
+}
+
+ul {
+  list-style: none;
+}
+
 h1 {
   font-size: var(--text-xxl);
 }
 
-.body.theme-light {
+/* .body.theme-light {
   background-color: var(--c-white);
 }
 
 .body.theme-dark {
   background-color: var(--c-darkest);
-}
+} */
 
 a {
   color: inherit;

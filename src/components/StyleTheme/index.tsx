@@ -7,6 +7,8 @@ import { useTheme } from 'hooks/useTheme';
 export default function StyleTheme() {
   const { theme, setTheme } = useTheme();
 
+  return <></>;
+
   return (
     <div
       className={`${styles['Style-theme']} ${styles[theme]}`}
@@ -14,7 +16,7 @@ export default function StyleTheme() {
     >
       <WiMoonFirstQuarter
         size={20}
-        color={theme === 'theme-light' ? '#fff' : '#0A0A0A'}
+        color={theme === 'theme-light' ? '#fff' : '#020202'}
       />
     </div>
   );

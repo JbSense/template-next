@@ -1,10 +1,13 @@
 import styles from './index.module.css';
-import { ButtonTypes } from 'types/buttonTypes';
+import { ButtonType } from 'types/buttonType';
 import { soraFont } from 'utils/fonts';
 
-export default function PrimaryButton({ text }: ButtonTypes) {
+export default function PrimaryButton({ text, onClick }: ButtonType) {
   return (
-    <button className={`${styles['Primary-button']} ${soraFont.className}`}>
+    <button
+      className={`${styles['Primary-button']} ${soraFont.className}`}
+      onClick={onClick}
+    >
       {text}
     </button>
   );

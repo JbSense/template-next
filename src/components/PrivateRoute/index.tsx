@@ -2,19 +2,20 @@
 
 import { useRouter } from 'next/navigation';
 import { ReactNode, useEffect } from 'react';
+import { isAuthenticated } from 'utils/isAuthenticated';
 
 const PrivateRoute = ({ children }: { children: ReactNode }) => {
   const { push } = useRouter();
-  const isAuthenticated = false;
+  const isUserAuthenticated = isAuthenticated();
 
   useEffect(() => {
-    if (!isAuthenticated) push('/');
-  }, [isAuthenticated, push]);
+    if (!isUserAuthenticated) push('/auth/signIn');
+  }, [isUserAuthenticated, push]);
 
   return (
     <>
-      {!isAuthenticated && null}
-      {isAuthenticated && children}
+      {!isUserAuthenticated && null}
+      {isUserAuthenticated && children}
     </>
   );
 };

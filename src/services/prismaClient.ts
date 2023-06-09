@@ -1,3 +1,7 @@
 import { PrismaClient } from '@prisma/client';
 
-export const prismaCLient = new PrismaClient();
+const prismaCLient = global.prisma || new PrismaClient();
+
+if (process.env.NODE_ENV === 'development') global.prisma = prismaCLient;
+
+export { prismaCLient };

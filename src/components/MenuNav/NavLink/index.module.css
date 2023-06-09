@@ -1,0 +1,19 @@
+.Nav-link {
+  width: 230px;
+  height: 60px;
+  padding: 0 16px;
+  border-radius: var(--br-m);
+  color: var(--c-dark-medium);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: .3s ease;
+}
+
+.Nav-link:hover {
+  background-color: var(--c-black);
+}
+
+.selected.Nav-link {
+  color: var(--c-white);
+}

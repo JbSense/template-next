@@ -1,0 +1,20 @@
+export type StudentFormType = {
+  id: string;
+  name: string;
+  day: number;
+  month: number;
+  year: number;
+  birthdate: string;
+  birthCertificate: string;
+  cpf: string;
+  rg: string;
+  nis: string;
+  observations: string;
+  mother: string;
+  father: string;
+  district: string;
+  street: string;
+  number: string;
+  period: string;
+  stageId: string;
+};

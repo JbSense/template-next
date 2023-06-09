@@ -1,7 +1,7 @@
 import jwt from 'jsonwebtoken';
-import { EncryptData } from 'types/encryptData';
+import { TokenDataType } from 'types/tokenData';
 
-export const encrypt = (data: EncryptData) => {
+export const encrypt = (data: TokenDataType) => {
   const token = jwt.sign({ data }, process.env.PRIVATE_KEY || '', {
     expiresIn: 60 * 60 * 24 // 24 horas
   });

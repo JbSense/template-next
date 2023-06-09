@@ -1,10 +1,14 @@
 'use client';
 
-import { useContext } from 'react';
-import { ThemeContext } from 'context/themeContext';
-
 export const useTheme = () => {
-  const context = useContext(ThemeContext);
+  const theme = localStorage.getItem('theme');
 
-  return context;
+  const setTheme = (newTheme: 'light' | 'dark') => {
+    localStorage.setItem('theme', `theme-${newTheme}`);
+  };
+
+  return {
+    theme,
+    setTheme
+  };
 };

@@ -1,0 +1,14 @@
+.Current-stage {
+  height: 53px;
+  display: flex;
+  align-items: center;
+  font-size: var(--text-l);
+}
+
+.Current-stage.theme-light {
+  color: var(--c-black);
+}
+
+.Current-stage.theme-dark {
+  color: var(--c-white);
+}

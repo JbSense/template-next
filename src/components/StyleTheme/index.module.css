@@ -17,7 +17,7 @@
 }
 
 .Style-theme.theme-light {
-  background-color: var(--c-darkest);
+  background-color: var(--c-black);
 }
 
 .Style-theme > svg {

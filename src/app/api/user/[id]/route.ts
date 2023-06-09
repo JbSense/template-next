@@ -11,10 +11,19 @@ export async function GET(
     where: {
       id
     },
-    include: {
+    select: {
+      id: true,
+      email: true,
       employee: {
         select: {
-          position: true
+          id: true,
+          position: true,
+          school: {
+            select: {
+              id: true,
+              name: true
+            }
+          }
         }
       }
     }
@@ -22,8 +31,7 @@ export async function GET(
 
   return NextResponse.json({
     data: {
-      users,
-      id
+      users
     }
   });
 }

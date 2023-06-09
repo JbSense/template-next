@@ -1,0 +1,32 @@
+.Date {
+  width: 100%;
+  max-width: 230px;
+  padding: 8px;
+  border: 2px solid var(--c-dark);
+  border-radius: var(--br-s);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.Date__button {
+  cursor: pointer;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Date__back {
+  padding-left: 8px;
+  border-left: 2px solid var(--c-dark);
+  transform: rotate(180deg);
+}
+
+.Date__next {
+  padding-left: 8px;
+  border-left: 2px solid var(--c-dark);
+}

@@ -1,0 +1,27 @@
+.Estudante-adicionar {
+  width: 100%;
+  max-width: var(--medium-width);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+}
+
+.Estudante-adicionar__title {
+  width: 100%;
+}
+
+.Estudante-adicionar__form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.Estudante-adicionar__docs,
+.Estudante-adicionar__parents,
+.Estudante-adicionar__address {
+  display: flex;
+  gap: 12px;
+}

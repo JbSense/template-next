@@ -1,0 +1,20 @@
+.Logout {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--c-dark-medium);
+  cursor: pointer;
+  transition: .3s ease;
+}
+
+.Logout:hover {
+  color: var(--c-white);
+}
+
+.Logout:hover ~ svg {
+  color: var(--c-white);
+}
+
+.Logout p {
+  font-weight: 500;
+}

@@ -1,0 +1,21 @@
+.Frequencias {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.Frequencias__title {
+  width: 100%;
+  font-size: var(--text-l);
+}
+
+.Frequencies__actions {
+  display: flex;
+  gap: 16px;
+}
+
+.Frequencias__date {
+  width: 100%;
+}

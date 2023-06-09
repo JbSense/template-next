@@ -1,0 +1,58 @@
+.List-students {
+  width: 100%;
+}
+
+.List-students__title-content {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.List-students__add-student {
+  width: 25px;
+  height: 25px;
+  border-radius: 100%;
+  background-color: var(--c-ocean);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.List-students__table {
+  width: 100%;
+  text-align: left;
+  border-collapse: collapse;
+}
+
+.List-students__table tr {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr auto;
+}
+
+.List-students__table th {
+  font-size: var(--text-base);
+  font-weight: 500;
+  color: var(--c-dark);
+  padding-bottom: 24px;
+}
+
+.List-students__table th, .List-students__table td {
+  border-bottom: 1px solid var(--c-dark);
+}
+
+.List-students__table td {
+  padding: 12px 0;
+  display: flex;
+  align-items: center;
+}
+
+.List-students__name {
+  font-size: var(--text-s);
+}
+
+.List-students__actions {
+  display: flex;
+  gap: 16px;
+}

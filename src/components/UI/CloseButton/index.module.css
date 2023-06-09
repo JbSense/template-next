@@ -1,0 +1,13 @@
+.Close-button {
+  width: 35px;
+  height: 35px;
+  border-radius: 100%;
+  background-color: var(--c-evil);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: -12px;
+  right: -12px;
+  cursor: pointer;
+}

@@ -9,6 +9,7 @@ type FieldType = {
   type: 'text' | 'email' | 'number' | 'password';
   name: string;
   placeholder: string;
+  defaultValue?: string | number;
   register: UseFormRegister<FieldValues>;
 };
 
@@ -16,6 +17,7 @@ export default function Field({
   name,
   type,
   placeholder,
+  defaultValue,
   register
 }: FieldType) {
   const { theme } = useTheme();
@@ -25,6 +27,7 @@ export default function Field({
       <input
         type={type}
         id={name}
+        defaultValue={defaultValue}
         {...register(name)}
         className={`${styles['Field__input']} ${soraFont.className}`}
         required

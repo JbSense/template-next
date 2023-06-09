@@ -1,0 +1,16 @@
+.Secondary-button {
+  font-size: var(--text-s);
+  font-weight: 500;
+  color: var(--c-white);
+  padding: 8px 24px;
+  border: 2px solid var(--c-dark);
+  border-radius: var(--br-btn);
+}
+
+.Secondary-button.full {
+  width: 100%;
+}
+
+.Secondary-button.auto {
+  width: auto;
+}

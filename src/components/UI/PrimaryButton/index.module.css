@@ -1,6 +1,8 @@
 .Primary-button {
   background-color: var(--c-ocean);
   color: var(--c-white);
+  padding: 16px 24px;
+  border-radius: var(--br-btn);
 }
 
 .Primary-button:hover {

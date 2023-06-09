@@ -1,0 +1,49 @@
+.Date-field {
+  width: 100%;
+  height: 60px;
+  padding: 0px 16px;
+  border-radius: var(--br-s);
+  background: var(--c-dark);
+  max-width: var(--width-max-field);
+  display: grid;
+  grid-template-columns: 1fr 5px 1fr 5px 1fr;
+  align-items: center;
+}
+
+.theme-light.Date-field {
+  background-color: var(--c-apple-gray);
+}
+
+.theme-dark.Date-field {
+  background-color: var(--c-dark);
+}
+
+.Date-field input {
+  width: 100%;
+  font-size: var(--f-l);
+  text-align: center;
+}
+
+.theme-light.Date-field input {
+  color: var(--c-black);
+}
+
+.theme-dark.Date-field input {
+  color: var(--c-white);
+}
+
+.theme-light.Date-field input::placeholder {
+  color: var(--c-dark);
+}
+
+.theme-dark.Date-field input::placeholder {
+  color: var(--c-white);
+}
+
+.Date-field__separator {
+  width: 2px;
+  height: 70%;
+  background-color: var(--c-dark-medium);
+  transform: rotate(10deg);
+  display: block;
+}

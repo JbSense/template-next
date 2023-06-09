@@ -1,0 +1,19 @@
+.List-item {
+  width: 230px;
+  height: 60px;
+  padding: 0 16px;
+  border-radius: var(--br-m);
+  color: var(--c-dark-medium);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: .3s ease;
+}
+
+.List-item:hover {
+  background-color: var(--c-darkest);
+}
+
+.selected.List-item {
+  color: var(--c-white);
+}
